@@ -18,6 +18,7 @@
     "electric-mysql": "^0.1.523",
     "electric-express": "^3.0.152",
     "electrician": "^1.0.7",
+    "module-tsl-endpoints": "^3.0.814",
     "module-tsl-logger": "^4.0.76"
   },
   "config": {

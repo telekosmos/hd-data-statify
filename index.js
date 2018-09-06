@@ -1,4 +1,6 @@
 const Conflab = require('electric-conflab');
+const Mysql = require('electric-mysql');
+const Endpoints = require('module-tsl-endpoints/electric');
 const { system: sys } = require('electrician');
 const { App, Server } = require('electric-express');
 const logger = require('module-tsl-logger');
@@ -11,6 +13,7 @@ const components = {
   app: new App(),
   server: new Server(),
   service: app,
+  mysql: new Mysql()
 };
 
 const system = sys(components);
@@ -24,6 +27,6 @@ system.start((err, ctx) => {
   logger.info('Started', pkg.name);
 
   const startTime = new Date();
-  const { checks, metrics } = ctx;
+  const { createQueries } = ctx;
 
 });
