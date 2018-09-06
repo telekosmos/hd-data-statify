@@ -4,6 +4,7 @@ const Endpoints = require('module-tsl-endpoints/electric');
 const { system: sys } = require('electrician');
 const { App, Server } = require('electric-express');
 const logger = require('module-tsl-logger');
+const createQueries = require('./src/stats');
 
 const app = require('./src/app');
 const pkg = require('./package.json');
@@ -14,7 +15,8 @@ const components = {
   app: new App(),
   server: new Server(),
   service: app,
-  mysql: new Mysql()
+  mysql: new Mysql(),
+  queries: createQueries(),
 };
 
 const system = sys(components);

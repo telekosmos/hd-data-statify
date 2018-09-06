@@ -1,16 +1,14 @@
 const exportDir = require('export-dir');
 const { mergeAll, values, pipe, map } = require('ramda');
 const { join } = require('path');
-const queries = exportDir(__dirname);
-const Publisher = require('../lib/publisher');
+const allQueries = exportDir(__dirname);
 
-module.exports = (checkType) => ({
+module.exports = (queryType) => ({
   dependsOn: ['config', 'mysql'],
   start: (config, mysql, callback) => {
     const sqlFiles = join(__dirname, 'sql');
-    const publisher = new Publisher();
 
-    function create(init) {
+    const create = (init) => {
       if (!init || (typeof(init) !== 'function')) {
         return {};
       }
@@ -22,8 +20,8 @@ module.exports = (checkType) => ({
         }));
     }
 
-    const queries = queryType ? queries[checkType] : mergeAll(values(allChecks));
+    const queries = queryType ? allQueries[checkType] : mergeAll(values(allQueries));
 
-    return callback(null, pipe(values, map(create))(checks));
+    return callback(null, pipe(values, map(create))(queries));
   },
 });
