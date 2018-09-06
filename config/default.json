@@ -1,0 +1,11 @@
+{
+    "mysql": {
+      "database": "event_aggregates",
+      "user": "admin",
+      "password": "password",
+      "hostname": "localhost",
+      "multipleStatements": false,
+      "connectionLimit": 10,
+      "sql": "checks/sql"
+    }
+}
