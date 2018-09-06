@@ -3,5 +3,14 @@
     "port": 5665,
     "host": "0.0.0.0",
     "workers": 2
+  },
+  "mysql": {
+    "database": "event_aggregates",
+    "user": "admin",
+    "password": "password",
+    "hostname": "localhost",
+    "multipleStatements": false,
+    "connectionLimit": 10,
+    "sql": "checks/sql"
   }
 }
