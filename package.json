@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/tes/hd-data-statify/issues"
   },
-  "homepage": "https://github.com/tes/hd-data-statify#readme"
+  "homepage": "https://github.com/tes/hd-data-statify#readme",
+  "dependencies": {
+    "electric-conflab": "^1.0.24",
+    "electrician": "^1.0.7",
+    "module-tsl-logger": "^4.0.76"
+  }
 }
