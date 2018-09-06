@@ -1,7 +1,10 @@
+const Controller = require('./controller');
+
 module.exports = {
   dependsOn: ['config', 'app'],
   start(config, app, next) {
-    require('./routes')(app);
+    const controller = Controller();
+    require('./routes')(app, controller);
     next();
   },
 };

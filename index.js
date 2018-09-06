@@ -25,7 +25,7 @@ system.start((err, ctx) => {
     process.exit(1);
   }
 
-  logger.info('Started', pkg.name);
+  logger.info('Started', pkg.name, ctx.config.server.port);
 
   const startTime = new Date();
   const { createQueries } = ctx;
