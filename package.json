@@ -7,12 +7,8 @@
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tes/hd-data-statify.git"
-  },
-  "author": "",
-  "license": "ISC",
+  "repository": "github:tes/hd-data-statify",
+  "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/tes/hd-data-statify/issues"
   },
@@ -21,5 +17,13 @@
     "electric-conflab": "^1.0.24",
     "electrician": "^1.0.7",
     "module-tsl-logger": "^4.0.76"
+  },
+  "config": {
+    "stack": "platform",
+    "port": 5665
+  },
+  "private": true,
+  "devDependencies": {
+    "module-tsl-boilerplate": "^3.0.107"
   }
 }

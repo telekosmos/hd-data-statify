@@ -1,17 +1,11 @@
-.idea/
-.bin/
-logs/
-.DS_Store
-*.log
-workspace.xml
-node_modules
-*.iml
-manifest.json
-coverage
-doc
-.*.sw?
-npm-debug.log
-newrelic_agent.log
 npm-debug.log.*
-*.sublime-*
-secrets.json
+*.sublime-*	*.sublime-*
+scripts/*.sql	scripts/*.sql
+ # *** Boilerplate auto-update files v3.0.107
+/.dockerignore
+/.editorconfig
+/Dockerfile
+/Makefile
+/.npmrc
+/docker/supervisor.conf
+/newrelic.js
