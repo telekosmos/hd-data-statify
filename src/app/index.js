@@ -1,9 +1,9 @@
 const Controller = require('./controller');
 
 module.exports = {
-  dependsOn: ['config', 'app'],
-  start(config, app, next) {
-    const controller = Controller();
+  dependsOn: ['config', 'app', 'queries', 'mysql'],
+  start(config, app, queries, mysql, next) {
+    const controller = Controller(queries, mysql);
     require('./routes')(app, controller);
     next();
   },

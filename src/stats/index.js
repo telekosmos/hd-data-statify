@@ -2,26 +2,18 @@ const exportDir = require('export-dir');
 const { mergeAll, values, pipe, map } = require('ramda');
 const { join } = require('path');
 const allQueries = exportDir(__dirname);
+const R = require('ramda');
 
 module.exports = (queryType) => ({
-  dependsOn: ['config', 'mysql'],
-  start: (config, mysql, callback) => {
-    const sqlFiles = join(__dirname, 'sql');
-
-    const create = (init) => {
-      if (!init || (typeof(init) !== 'function')) {
-        return {};
-      }
-
-      return init({ config, mysql })
-        .then(() => ({}))
-        .catch((err) => ({
-          err,
-        }));
-    }
-
-    const queries = queryType ? allQueries[checkType] : mergeAll(values(allQueries));
-
-    return callback(null, pipe(values, map(create))(queries));
+  dependsOn: [],
+  start: (callback) => {
+    console.log('allQueries', allQueries)
+    const promiseQueries = R.pipe(
+      R.map(R.values),
+      R.values,
+      R.flatten,
+    )(allQueries)
+    console.log('pepe')
+    return callback(null, promiseQueries)
   },
 });
