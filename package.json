@@ -19,6 +19,7 @@
   "homepage": "https://github.com/tes/hd-data-statify#readme",
   "dependencies": {
     "electric-conflab": "^1.0.24",
+    "electric-mysql": "^0.1.523",
     "electrician": "^1.0.7",
     "module-tsl-logger": "^4.0.76"
   }
