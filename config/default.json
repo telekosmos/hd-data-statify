@@ -12,9 +12,9 @@
     "database": "event_aggregates",
     "user": "admin",
     "password": "password",
-    "hostname": "localhost",
+    "hostname": "local.tescloud.com",
     "multipleStatements": false,
     "connectionLimit": 10,
-    "sql": "checks/sql"
+    "sql": "./src/stats/sql"
   }
 }

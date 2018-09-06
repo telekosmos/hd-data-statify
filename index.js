@@ -10,6 +10,7 @@ const pkg = require('./package.json');
 
 const components = {
   config: new Conflab(),
+  endpoints: new Endpoints(),
   app: new App(),
   server: new Server(),
   service: app,
