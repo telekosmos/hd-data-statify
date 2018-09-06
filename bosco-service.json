@@ -1,0 +1,7 @@
+{
+  "tags": [],
+  "service": {
+      "name": "hd-data-statify",
+      "dependsOn": ["infra-mysql"]
+  }
+}
