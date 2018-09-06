@@ -9,3 +9,4 @@ scripts/*.sql	scripts/*.sql
 /.npmrc
 /docker/supervisor.conf
 /newrelic.js
+node_modules
