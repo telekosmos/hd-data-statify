@@ -1,8 +1,12 @@
 {
   "server": {
-    "port": 5665,
     "host": "0.0.0.0",
-    "workers": 2
+    "port": 5665,
+    "workers": 1,
+    "main": "index.js",
+    "errors": {
+      "includeStackTrace": true
+    }
   },
   "mysql": {
     "database": "event_aggregates",

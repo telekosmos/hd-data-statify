@@ -16,6 +16,7 @@
   "dependencies": {
     "electric-conflab": "^1.0.24",
     "electric-mysql": "^0.1.523",
+    "electric-express": "^3.0.152",
     "electrician": "^1.0.7",
     "module-tsl-logger": "^4.0.76"
   },
