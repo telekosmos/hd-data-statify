@@ -12,9 +12,12 @@
     "database": "event_aggregates",
     "user": "admin",
     "password": "password",
-    "hostname": "local.tescloud.com",
-    "multipleStatements": false,
+    "sql": "src/stats/sql",
+    "waitForConnections": true,
     "connectionLimit": 10,
-    "sql": "./src/stats/sql"
+    "queueLimit": 0
+  },
+  "hipchat": {
+    "roomId": 4732917
   }
 }

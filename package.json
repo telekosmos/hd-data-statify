@@ -19,6 +19,7 @@
     "electric-mysql": "^0.1.523",
     "electrician": "^1.0.7",
     "export-dir": "^0.1.2",
+    "hipchatter": "^1.0.0",
     "module-tsl-endpoints": "^3.0.814",
     "module-tsl-logger": "^4.0.76",
     "ramda": "^0.25.0"

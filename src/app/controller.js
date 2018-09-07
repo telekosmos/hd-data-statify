@@ -6,9 +6,9 @@ const sequential = funcs =>
       func().then(Array.prototype.concat.bind(result))),
     Promise.resolve([]));
 
-
-module.exports = (queries) => {
-  const runStats = (req, res, next) => sequential(queries).then((report) => res.send(report));
+module.exports = (hipchat, queries) => {
+  const send2hipchat = (msg) => hipchat.send(msg, "green", true);
+  const runStats = (req, res, next) => sequential(queries).then((report) => send2hipchat(report.join('\n')));
 
   return {
     runStats,
