@@ -15,6 +15,6 @@ module.exports = ({ mysql }) => () =>
     .then((rows) => {
 
       console.log(rows)
-      return `<br />  Top 10 premium resources of the week ${extractResources(rows, 'resource_id')}`
+      return `Top 10 premium resources of the week ${extractResources(rows, 'resource_id')}`
     })
     .catch(console.log);
