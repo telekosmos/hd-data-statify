@@ -28,8 +28,4 @@ system.start((err, ctx) => {
   }
 
   logger.info('Started', pkg.name, ctx.config.server.port);
-
-  const startTime = new Date();
-  const { createQueries } = ctx;
-
 });

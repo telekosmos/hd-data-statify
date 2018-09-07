@@ -13,8 +13,8 @@ module.exports = (queryType) => ({
       R.values,
       R.flatten,
       R.map(p => p(dependencies))
-    )(allQueries)
+    )(allQueries);
 
-    return callback(null, promiseQueries)
+    return callback(null, promiseQueries);
   },
 });
