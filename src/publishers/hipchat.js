@@ -1,7 +1,7 @@
 const Hipchatter = require('hipchatter');
 
 const hipchat = (config) => {
-  const hipchatApiToken = config.apiToken;
+  const hipchatApiToken = config.apiToken || process.env.HIPCHAT_TOKEN;
   const hipchatApiAddress = 'https://tesglobal.hipchat.com/v2/';
   const chatter = new Hipchatter(hipchatApiToken, hipchatApiAddress);
 
