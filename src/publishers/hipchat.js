@@ -20,7 +20,7 @@ const hipchat = (config) => {
 
     chatter.notify(roomId,
       {
-        from: 'HD-Data-Statify',
+        from: '',
         message,
         color,
         notify,

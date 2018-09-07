@@ -1,3 +1,5 @@
+const logger = require('module-tsl-logger');
+
 const extractResources = (rows, field) => rows.map((row) => row[field] || '');
 
 module.exports = ({ mysql }) => () =>
@@ -12,8 +14,11 @@ module.exports = ({ mysql }) => () =>
       LIMIT 10;
     `)
     .then((rows) => {
-      const message = `Top 10 premium resources of the week:`
+      const message = `<strong>Top 10 premium resources of the week:</strong>`
       const list = rows.map(row => `&nbsp;&nbsp;&nbsp;&nbsp;${row['totals']} buys - <a href="https://www.tes.com/teaching-resource/resource-${row['resource_id']}" >${row['resource_name']}</a>`)
       return [message].concat(list).join('<br/>')
     })
-    .catch(console.log);
+    .catch((err) => {
+      logger.logError(err);
+      throw err;
+    });
