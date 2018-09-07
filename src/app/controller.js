@@ -10,7 +10,7 @@ module.exports = (hipchat, queries) => {
   const send2hipchat = (msg) => hipchat.send(msg, "green", true);
   const runStats = (req, res, next) =>
     sequential(queries)
-      .then((report) => send2hipchat(report.join('\n')))
+      .then((report) => send2hipchat(report.join('<br />')))
       .then(msg => res.send(msg));
 
   return {
