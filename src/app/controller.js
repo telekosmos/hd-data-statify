@@ -1,10 +1,14 @@
 const logger = require('module-tsl-logger');
 
-module.exports = (queries, mysql) => {
-  const runStats = (req, res, next) => {
-    // WIP. We need to "Promise.sequence" queries
-    queries[0]({ mysql }).then((report) => res.send(report));
-  }
+const sequential = funcs =>
+  funcs.reduce((promise, func) =>
+    promise.then(result =>
+      func().then(Array.prototype.concat.bind(result))),
+    Promise.resolve([]))
+
+
+module.exports = (queries) => {
+  const runStats = (req, res, next) => sequential(queries).then((report) => res.send(report));
 
   return {
     runStats,
